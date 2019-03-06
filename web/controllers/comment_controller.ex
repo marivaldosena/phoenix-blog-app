@@ -1,7 +1,7 @@
-defmodule PhBlog.CommentController do
+defmodule Phblog.CommentController do
   use Phblog.Web, :controller
 
-  alias PhBlog.Post
+  alias Phblog.Post
 
   def create(conn, %{"comment" => comment_params, "post_id" => post_id }) do
     post = Repo.get(Post, post_id)

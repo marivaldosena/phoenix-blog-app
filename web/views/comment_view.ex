@@ -1,4 +1,4 @@
-defmodule PhBlog.CommentView do
-  use PhBlog.Web, :view
+defmodule Phblog.CommentView do
+  use Phblog.Web, :view
   
 end
