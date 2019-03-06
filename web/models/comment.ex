@@ -1,11 +1,9 @@
-defmodule Phblog.Post do
+defmodule Phblog.Comment do
   use Phblog.Web, :model
 
-  schema "posts" do
-    field :title, :string
+  schema "comments" do
     field :body, :string
-
-    has_many :comments, Phblog.Comment
+    belongs_to :post, Phblog.Post
 
     timestamps()
   end
@@ -15,7 +13,7 @@ defmodule Phblog.Post do
   """
   def changeset(struct, params \\ %{}) do
     struct
-    |> cast(params, [:title, :body])
-    |> validate_required([:title, :body])
+    |> cast(params, [:body])
+    |> validate_required([:body])
   end
 end
